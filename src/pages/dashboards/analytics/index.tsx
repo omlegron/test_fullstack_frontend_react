@@ -69,7 +69,7 @@ const AnalyticsDashboard = () => {
     console.log('store', store)
     setDataAnaly(store.dataAnalytics)
     setLocations(store.data)
-  }, [store, setLocations, dataAnaly])
+  }, [store, setLocations, setDataAnaly])
   
   return (
     <ApexChartWrapper>
