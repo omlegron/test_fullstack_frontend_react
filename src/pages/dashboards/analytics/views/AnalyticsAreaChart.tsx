@@ -11,8 +11,6 @@ import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 
 const AnalyticsAreaChart = ({dataAnalytics} : any) => {
-  console.log('dataAnalytics', dataAnalytics)
-
   const series = [
     {
       name: dataAnalytics?.arrDate?.[0]?.name ?? '-',

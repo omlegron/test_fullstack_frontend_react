@@ -21,11 +21,8 @@ const AnalyticsWebsiteAnalyticsSlider = ({dataAnalytics}: any) => {
 
   return (
     <Card sx={{ position: 'relative', backgroundColor: 'primary.main' }}>
-      
-      <>
       {
-      dataAnalytics ? 
-        dataAnalytics.arrayAnalytic?.map((value: any, index: number) => {
+        dataAnalytics?.arrayAnalytic?.map((value: any, index: number) => {
           return (
             <Box
               key={'badge-'+index}
@@ -147,8 +144,7 @@ const AnalyticsWebsiteAnalyticsSlider = ({dataAnalytics}: any) => {
             </Box>
           )
         })
-      : ''
-      }</>
+      }
     </Card>
   )
 }

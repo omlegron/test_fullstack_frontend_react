@@ -11,7 +11,7 @@ import AnalyticsRatingWithRadarChart from './views/AnalyticsRatingWithRadarChart
 import AnalyticsEarningReportsWithTabs from './views/AnalyticsEarningReportsWithTabs'
 import AnalyticsAreaChart from './views/AnalyticsAreaChart'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 // ** Custom Component Import
 import KeenSliderWrapper from 'src/@core/styles/libs/keen-slider'
@@ -46,27 +46,28 @@ const AnalyticsDashboard = () => {
 
   const dispatch = useDispatch<AppDispatch>()
   const store = useSelector((state: RootState) => state.analytics )
-
-  
-  useEffect(() => {
-    console.log('filters', filters)
-    dispatch(
-      fetchData(filters)
-    )
-  }, [setFilters]);
-
   const handleFilterChange = (filterType: any, value: any) => {
       console.log('filterType', filterType)
       setFilters(prevFilters => ({ ...prevFilters, [filterType]: value }));
-      dispatch(
-        fetchData(filterType)
-      )
+      
+      fetchDataFilter(filterType);
+
   };
 
-  
+  const fetchDataFilter = useCallback((filterType: any) => {
+    setFilters(filterType);
+
+  }, [setFilters]);
 
   useEffect(() => {
-    console.log('store', store)
+    console.log('in')
+    dispatch(
+      fetchData(filters)
+    )
+  }, [dispatch, filters]);
+
+  useEffect(() => {
+    console.log('store use effect', store)
     setDataAnaly(store.dataAnalytics)
     setLocations(store.data)
   }, [store, setLocations, setDataAnaly])

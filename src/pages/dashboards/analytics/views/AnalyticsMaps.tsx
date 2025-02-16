@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { GoogleMap, LoadScript, Marker, InfoWindow, Polyline, useJsApiLoader } from '@react-google-maps/api';
+import React, { useState } from 'react';
+import { GoogleMap, Marker, InfoWindow, Polyline, useJsApiLoader } from '@react-google-maps/api';
 
-const AnalyticsMaps = ({ locations }) => {
-    console.log('locations', locations)
+const AnalyticsMaps = ({ locations }: any) => {
     const [selectedTrip, setSelectedTrip] = useState(null);
     const { isLoaded } = useJsApiLoader({
         id: 'google-maps-script',
