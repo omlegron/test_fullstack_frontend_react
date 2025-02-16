@@ -1,17 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## README
+## LAST NODE USING (V23.6.1), NPM 10.9.2
 
 ## Getting Started
 
-First, run the development server:
+- BACKEND NODE JS / EXPRESS JS 
+    – FIRST RUN 
+        NPM INSTALL 
+        NPM START
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    – SECOND RUN
+        OPEN http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- FRONTEND REACT
+    - FIRST RUN
+        YARN INSTALL / NPM INSTALL
+        CONFIGURATION .ENV (URL BACKEND / ENV ALREADY IN FOLDER)
+        YARN DEV
+        
+    - SECOND RUN
+        OPEN http://localhost:4000
+
