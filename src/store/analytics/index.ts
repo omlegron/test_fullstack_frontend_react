@@ -43,7 +43,7 @@ export const appAnalyticsSlice = createSlice({
     extraReducers: builder => {
       builder.addCase(fetchData.fulfilled, (state, action) => {
         state.data = action.payload.data
-        state.dataAnalytics = action.payload.dataAnalytics
+        state.dataAnalytics = action.payload.dataAnalytics || state.dataAnalytics
         state.total = action.payload.data.length
         state.params = action.payload.params
       })
